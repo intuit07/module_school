@@ -14,6 +14,26 @@
         </field>
     </record>
 
+    <record id="view_student_form" model="ir.ui.view">
+        <field name="name">view.student.form</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <form string="Carrier">
+                <sheet>
+                    <group string="Student">
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="clases_id"/>
+                        <field name="nationality"/>
+                        <field name="student_dob"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
     <data>
         <menuitem id="school_menu" name="School"/>
         <menuitem id="school_student_menu"
