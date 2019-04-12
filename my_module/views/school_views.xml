@@ -75,7 +75,29 @@
         </field>
     </record>
 
-
+    <record id="view_student_filter" model="ir.ui.view">
+            <field name="name">view.student.filter</field>
+            <field name="model">student.student</field>
+            <field name="arch" type="xml">
+                <search string="Search Student">
+                    <filter string="Old"
+                            name="old_students"
+                            domain="[('age', '&gt;', '30')]"
+                            help="Students, who older then 30"/>
+                    <filter string="Young"
+                            name="young_students"
+                            domain="[('age', '&lt;', '20')]"
+                            help="Students, who younger then 20"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Nationality" name="nationality"
+                                context="{'group_by':'nationality'}"/>
+                        <filter string="Clases" name="clases"
+                                context="{'group_by':'clases_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
 
     <data>
         <menuitem id="school_menu" name="School"/>

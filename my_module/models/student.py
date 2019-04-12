@@ -24,8 +24,8 @@ class StudentStudent(models.Model):
         string='Gender')
     student_dob = fields.Date(string="Date of Birth")
     student_blood_group = fields.Selection(
-        [('A+', 'A+ve'), ('B+', 'B+ve'), ('O+', 'O+ve'), ('AB+', 'AB+ve'),
-         ('A-', 'A-ve'), ('B-', 'B-ve'), ('O-', 'O-ve'), ('AB-', 'AB-ve')],
+        [('A+', 'A+'), ('B+', 'B+'), ('O+', 'O+'), ('AB+', 'AB+'),
+         ('A-', 'A-'), ('B-', 'B-'), ('O-', 'O-'), ('AB-', 'AB-')],
         string='Blood Group')
     nationality = fields.Many2one('res.country', string='Nationality')
     clases_id = fields.Many2one('clases.clases', 'Clases')
