@@ -14,6 +14,17 @@
         </field>
     </record>
 
+    <record id="clases_menu_action" model="ir.actions.act_window">
+        <field name="name">Clases</field>
+        <field name="res_model">clases.clases</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help " type=" html ">
+            <p class="oe_view_nocontent_create">Create new class</p>
+        </field>
+    </record>
+
     <record id="view_student_form" model="ir.ui.view">
         <field name="name">view.student.form</field>
         <field name="model">student.student</field>
@@ -32,6 +43,23 @@
         </field>
     </record>
 
+    <record id="view_clases_form" model="ir.ui.view">
+        <field name="name">view.clases.form</field>
+        <field name="model">clases.clases</field>
+        <field name="arch" type="xml">
+            <form string="Carrier">
+                <sheet>
+                    <group string="Student">
+                        <field name="name"/>
+                        <field name="quantity"/>
+                        <field name="students_id"/>
+                        <field name="specification"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 
 
     <data>
@@ -40,6 +68,10 @@
                   parent="school_menu"
                   name="Student"
                   action="student_menu_action"/>
+        <menuitem id="school_clases_menu"
+                  parent="school_menu"
+                  name="Clases"
+                  action="clases_menu_action"/>
     </data>
 
 

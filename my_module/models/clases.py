@@ -11,3 +11,4 @@ class Clases(models.Model):
     specification = fields.Selection(
         [('math', 'Math'), ('engl', 'Engl'), ('law', 'law')],
         string='Specification')
+    students_id = fields.Many2one('student.student', 'Students')
