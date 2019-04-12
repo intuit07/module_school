@@ -37,9 +37,23 @@
                         <field name="clases_id"/>
                         <field name="nationality"/>
                         <field name="student_dob"/>
+                        <field name="today" widget="date"/>
+                        <field name="number"/>
+                        <field name="compute_days" widget="date"/>
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_student_tree" model="ir.ui.view">
+        <field name="name">view.student.tree</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <tree string="test">
+                <field name="name"/>
+                <field name="compute_days"/>
+            </tree>
         </field>
     </record>
 
@@ -54,6 +68,7 @@
                         <field name="quantity"/>
                         <field name="students_id"/>
                         <field name="specification"/>
+                        <field name="students_ids"/>
                     </group>
                 </sheet>
             </form>
