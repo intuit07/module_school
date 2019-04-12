@@ -25,6 +25,17 @@
         </field>
     </record>
 
+    <record id="teacher_menu_action" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="res_model">teacher.teacher</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help " type=" html ">
+            <p class="oe_view_nocontent_create">Create new teacher</p>
+        </field>
+    </record>
+
     <record id="view_student_form" model="ir.ui.view">
         <field name="name">view.student.form</field>
         <field name="model">student.student</field>
@@ -69,6 +80,7 @@
                         <field name="students_id"/>
                         <field name="specification"/>
                         <field name="students_ids"/>
+                        <field name="teacher_id"/>
                     </group>
                 </sheet>
             </form>
@@ -76,28 +88,28 @@
     </record>
 
     <record id="view_student_filter" model="ir.ui.view">
-            <field name="name">view.student.filter</field>
-            <field name="model">student.student</field>
-            <field name="arch" type="xml">
-                <search string="Search Student">
-                    <filter string="Old"
-                            name="old_students"
-                            domain="[('age', '&gt;', '30')]"
-                            help="Students, who older then 30"/>
-                    <filter string="Young"
-                            name="young_students"
-                            domain="[('age', '&lt;', '20')]"
-                            help="Students, who younger then 20"/>
-                    <separator/>
-                    <group expand="0" string="Group By">
-                        <filter string="Nationality" name="nationality"
-                                context="{'group_by':'nationality'}"/>
-                        <filter string="Clases" name="clases"
-                                context="{'group_by':'clases_id'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+        <field name="name">view.student.filter</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <search string="Search Student">
+                <filter string="Old"
+                        name="old_students"
+                        domain="[('age', '&gt;', '30')]"
+                        help="Students, who older then 30"/>
+                <filter string="Young"
+                        name="young_students"
+                        domain="[('age', '&lt;', '20')]"
+                        help="Students, who younger then 20"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Nationality" name="nationality"
+                            context="{'group_by':'nationality'}"/>
+                    <filter string="Clases" name="clases"
+                            context="{'group_by':'clases_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
     <data>
         <menuitem id="school_menu" name="School"/>
@@ -109,7 +121,10 @@
                   parent="school_menu"
                   name="Clases"
                   action="clases_menu_action"/>
+        <menuitem id="school_teacher_menu"
+                  parent="school_menu"
+                  name="Teachers"
+                  action="teacher_menu_action"/>
     </data>
-
 
 </odoo>

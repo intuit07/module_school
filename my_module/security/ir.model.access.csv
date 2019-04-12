@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_all_student_student,student_student all,model_student_student,,1,1,1,1
 access_all_clases_clases,clases_clases all,model_clases_clases,,1,1,1,1
+access_all_teacher_teacher,teacher_teacher all,model_teacher_teacher,,1,1,1,1

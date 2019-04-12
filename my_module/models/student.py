@@ -5,7 +5,7 @@ import datetime
 from datetime import timedelta
 
 
-class StudentStudent(models.Model):
+class Student(models.Model):
     _name = 'student.student'
 
 
